@@ -4,7 +4,7 @@
 # Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not
 # endorse or recommend this or any other product."
 
-from flask import request
+import requests
 import json
 
 def get_drug_info(drug_name):
@@ -19,7 +19,7 @@ def get_drug_info(drug_name):
     """
 
     # HTTP get request -> response object called r
-    r = request.get('https://rxnav.nlm.nih.gov/REST/approximateTerm.json?term=' + drug_name + '&maxEntries=1')
+    r = requests.get('https://rxnav.nlm.nih.gov/REST/approximateTerm.json?term=' + drug_name + '&maxEntries=1')
     # check if got an error
     if r.status_code != 200:
         raise ApiError('GET /tasks/ {}'.format(r.status_code))
@@ -56,7 +56,7 @@ def get_all_properties(rxcui):
     """
 
     # HTTP get request -> response object called r
-    r = request.get('https://rxnav.nlm.nih.gov/REST/rxcui/' + rxcui + '/allProperties.json?prop=all')
+    r = requests.get('https://rxnav.nlm.nih.gov/REST/rxcui/' + rxcui + '/allProperties.json?prop=all')
     # check for error
     if r.status_code != 200:
         raise ApiError('GET /tasks/ {}'.format(r.status_code))
