@@ -2,7 +2,7 @@ from flask import Flask, redirect, render_template, url_for, request
 # from flask-sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-from rxnorm_api import *
+from rxnorm import *
 
 app = Flask(__name__)
 
@@ -30,11 +30,16 @@ def home():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    # if request.method == 'POST':
-    # #    query = request.form[]
-    # #    return redirect(url_for('/search/med'))
-    # else:
-    return render_template('search.html')
+    if request.method == 'POST':
+       query = request.form['search']
+       return redirect(url_for('search_res', query=query))
+    else:
+        return render_template('search.html')
+@app.route('/<query>')
+def search_res(query):
+    res = get_drug_info(query)
+    return f'<h1>{res}<h1>'
+
 
 @app.route('/query-db', methods=['GET'])
 def query_db():
