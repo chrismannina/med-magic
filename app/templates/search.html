@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% block title %}Search{% endblock %} 
+{% block content %}
+
+<div class="container">
+  <form class="d-flex" action="" method="POST">
+    <select class="form-select" aria-label="Default select example" name="sel">
+        <option selected>API Function</option>
+        <option value="1">getDrugs</option>
+        <option value="2">getApproximateMatch</option>
+        <option value="image">Image</option>
+      </select>
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Search for a medication..."
+      aria-label="Search"
+      name="search"
+    />
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</div>
+
+{% endblock %}
