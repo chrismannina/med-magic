@@ -1,46 +1,66 @@
 {% extends 'base.html' %}
 {% block title %}About{% endblock %}
 {% block content %}
-<div class="container">
+
 <div class="accordion" id="accordionExample">
+    <!-- Heading 1 -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Disclaimer
+            About RxNorm
         </button>
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          This product uses publicly available data from the U.S. National Library of Medicine (NLM), National
-           Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not
-          endorse or recommend this or any other product.
+            <h5>What is RxNorm?</h5>
+            <p>RxNorm is two things: a normalized naming system for generic and branded drugs; and a tool for supporting semantic interoperation between drug terminologies and pharmacy knowledge base systems. The National Library of Medicine (NLM) produces RxNorm.</p>
+        
+            <h5>Purpose of RxNorm</h5>
+            <p>Hospitals, pharmacies, and other organizations use computer systems to record and process drug information. Because these systems use many different sets of drug names, it can be difficult for one system to communicate with another. To address this challenge, RxNorm provides normalized names and unique identifiers for medicines and drugs. The goal of RxNorm is to allow computer systems to communicate drug-related information efficiently and unambiguously.</p>
         </div>
       </div>
     </div>
+    <!-- Heading 2 -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
+            Links
         </button>
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="row">
+            <div class="col">
+                <h5>Information</h5>
+                <li><a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html" class="link-secondary" target="_blank">RxNorm API Documentation</a></li>
+                <li><a href="https://www.nlm.nih.gov/databases/umls.html" class="link-secondary" target="_blank">Unified Medical Language System License</a></li>
+                <li><a href="https://www.nlm.nih.gov/" class="link-secondary" target="_blank">National Library of Medicine</a></li>
+            </div>
+            <div class="col">
+            <h5>Development</h5>
+            <li><a href="https://github.com/chrismannina/med-magic" class="link-secondary" target="_blank">GitHub</a></li>
+            <li><a href="https://flask.palletsprojects.com/en/2.1.x/" class="link-secondary" target="_blank">Flask Documentation</a></li>
+            <li><a href="https://getbootstrap.com/" class="link-secondary" target="_blank">Bootstrap</a></li>
+            </div>
+            </div>
         </div>
       </div>
     </div>
+    <!-- Heading 3 -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Accordion Item #3
+          Disclaimer
         </button>
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <p>This product uses publicly available data from the U.S. National Library of Medicine (NLM), National
+                Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not
+               endorse or recommend this or any other product.</p>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 {% endblock %}

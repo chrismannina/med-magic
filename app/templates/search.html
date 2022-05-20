@@ -2,14 +2,17 @@
 {% block title %}Search{% endblock %} 
 {% block content %}
 
-<div class="container">
+
   <form class="d-flex" action="" method="POST">
+ <div class="col-auto p-1">
     <select class="form-select" aria-label="Default select example" name="sel">
-        <option selected>API Function</option>
+        <option selected>Select API Function</option>
         <option value="1">getDrugs</option>
         <option value="2">getApproximateMatch</option>
         <option value="image">Image</option>
       </select>
+    </div>
+    <div class="col p-1">
     <input
       class="form-control me-2"
       type="search"
@@ -17,8 +20,11 @@
       aria-label="Search"
       name="search"
     />
-    <button class="btn btn-outline-success" type="submit">Search</button>
+    </div>
+    <div class="col-auto p-1">
+    <button class="btn btn-outline-success text-white" type="submit" style="background-color: #6351ce">Search</button>
+    </div>
   </form>
-</div>
+
 
 {% endblock %}

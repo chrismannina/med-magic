@@ -2,10 +2,10 @@ from flask import Flask, redirect, render_template, url_for, request
 # from flask-sqlalchemy import SQLAlchemy
 from datetime import datetime
 import os
+from flask import current_app as app
+from .api import *
 
-from api.rxnorm import *
-
-app = Flask(__name__)
+# app = Flask(__name__, template_folder="templates")
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -18,7 +18,7 @@ def home():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    # post request
+    # POST request
     if request.method == 'POST':
         sel = request.form['sel']
         query = request.form['search']
@@ -28,7 +28,7 @@ def search():
             return redirect(url_for('img_srv', query=query))
         print('redirected to search_res wiht q:', query)
         return redirect(url_for('search_res', query=query))
-    # get request
+    # GET request
     else:
         return render_template('search.html')
 
@@ -65,5 +65,5 @@ def csv_wizard():
 def about():
     return render_template('about.html')
 
-if __name__=='__main__':
-    app.run(debug=True)
+# if __name__=='__main__':
+#     app.run(debug=True)

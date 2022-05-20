@@ -8,6 +8,7 @@ from unicodedata import category
 import requests
 import json
 
+
 def rxnorm(query):
     """Main function to search for a medication in RxNorm."""
     try:
