@@ -15,17 +15,15 @@
           </thead>
           <tbody>
             {% for med in meds %}
-            {% for n in uuid %}
             <tr>
               <td scope="row">{{ meds[med]['RxNorm Name'] }}</td>
               <td scope="row">{{ meds[med]['RxCUI'] }}</td>
               <td scope="row">{{ meds[med]['PRESCRIBABLE'] }}</td>
               <td scope="row">{{ meds[med]['Source'] }}</td>
               <td scope="row">{{ meds[med]['score'] }}</td>
-              <td scope="row">{{ uuid[n] }}</td>
+              <td scope="row">{{ uuid['uuid'] }}</td>
               <td scope="row">Add</td>
             </tr>
-            {% endfor %}
             {% endfor %}
           </tbody>
         </table>

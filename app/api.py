@@ -9,22 +9,58 @@ import requests
 import json
 
 
-def rxnorm(query):
+def rxnorm(query, api):
     """Main function to search for a medication in RxNorm."""
     try:
-        data = get_approximate_match(query)
-        res = get_all_properties(data)
-        return res
+        print('got here')
+        if api == 'getApproximateMatch':
+            data = get_approximate_match(query)
+            res = get_all_properties(data)
+            print(res)
+            return res
+        if api == 'getDrugs':
+            print('api get drugs')
+            return get_drugs(query)
+     
     except:
         raise Exception('No match found (rxnorm)')
     
+def get_drugs(name):
+    """
+    RxNorm API = getDrugs
+    Get the drug products associated with a specified name. The name can be an ingredient, brand name, clinical dose 
+    form, branded dose form, clinical drug component, or branded drug component.
+    HTTP GET request: https://rxnav.nlm.nih.gov/REST/drugs.json?name=value
+    :param name: string of name that can be an ingredient, brand name, clinical dose form, branded dose form, clinical 
+    drug component, or branded drug component
+    :return: results of NLM RxNorm query (output as JSON)
+    """
+    try:
+        # HTTP get request -> response object called res
+        r = requests.get('https://rxnav.nlm.nih.gov/REST/drugs.json?name=' + name)
+        # check if got an error
+        if r.status_code != 200:
+            raise Exception('Response code 200')
+    except:
+        # no match found -> print a message to console and return a Nont object
+        raise Exception('No match found (getApproximateMatch)')
+    data = r.json()
+    rxcui = []
+    drugs = []
+    for group in data['drugGroup']['conceptGroup']:
+        if 'conceptProperties' in group.keys():
+            for drug in group['conceptProperties']:
+                if drug['rxcui'] not in rxcui:
+                    rxcui.append(drug['rxcui'])
+                    drugs.append(drug) 
+    return drugs
 
 def get_approximate_match(term):
     """
     RxNorm API = getApproximateMatch
     Searches for strings in the RxNorm data set that most closely match the term
     parameter. Returns concept and atom IDs approximately matching a query.
-    HTTP GET request: https://rxnav.nlm.nih.gov/REST/approximateTerm.xml?term=value&maxEntries=value&option=value
+    HTTP GET request: https://rxnav.nlm.nih.gov/REST/approximateTerm.json?term=value&maxEntries=value&option=value
     :param term: string of which to find approximate matches (HTTP req param = term)
     :return: results of NLM RxNorm query (output as JSON)
     """
@@ -56,7 +92,7 @@ def get_all_properties(data):
     of properties to retrieve.
     Function: getAllProperties
     Information returned: Concept details
-    HTTP GET request: https://rxnav.nlm.nih.gov/REST/rxcui/rxcui/allProperties.xml?prop=yourPropCategories
+    HTTP GET request: https://rxnav.nlm.nih.gov/REST/rxcui/rxcui/allProperties.json?prop=yourPropCategories
     :param data: dicitionary with keys 0...n. Access rxcui identifier -> n['rxcui'] .
     :return: json result of all properties for that rxcui
     """

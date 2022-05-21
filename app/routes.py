@@ -22,15 +22,36 @@ def search():
     if request.method == 'POST':
         sel = request.form['sel']
         query = request.form['search']
-        print('sel = ', sel, ' | query = ',query)
-        print(type(sel))
-        if sel == 'image':
+        if sel == 'getDrugs':
+            return redirect(url_for('drugs', query=query))
+        elif sel == 'getApproximateMatch':
+            print('approx', query)
+            return redirect(url_for('approx_match', query=query))
+        elif sel == 'image':
             return redirect(url_for('img_srv', query=query))
-        print('redirected to search_res wiht q:', query)
-        return redirect(url_for('search_res', query=query))
     # GET request
     else:
         return render_template('search.html')
+
+@app.route('/drugs/<query>')
+def drugs(query):
+    try:    
+        res = rxnorm(query, 'getDrugs')
+    except:
+        # add alert here and send back to search page
+        return redirect('search')
+    return render_template('drugs.html', meds=res)
+
+@app.route('/approx-match/<query>')
+def approx_match(query):
+    try:    
+        res = rxnorm(query, 'getApproximateMatch')
+        r = requests.get('https://uuid-genie.herokuapp.com/api/uuid')
+        uuid = r.json()
+    except:
+        # add alert here and send back to search page
+        return redirect('search')
+    return render_template('approx-match.html', meds=res, uuid=uuid)
 
 @app.route('/image/<query>')
 def img_srv(query):
@@ -40,18 +61,6 @@ def img_srv(query):
     r = requests.post('https://image-srv.herokuapp.com/image', data=img)
     res = r.json()
     return render_template('image.html', url=res['image'])
-
-@app.route('/api/<query>')
-def search_res(query):
-    try:    
-        res = rxnorm(query)
-        num = str(len(res))
-        r = requests.get(f'https://uuid-genie.herokuapp.com/api/uuid/{num}')
-        uuid = r.json()
-    except:
-        # add alert here and send back to search page
-        return redirect('search')
-    return render_template('search-res.html', meds=res, uuid=uuid)
 
 @app.route('/query-db', methods=['GET'])
 def query_db():
