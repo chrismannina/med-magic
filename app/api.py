@@ -7,7 +7,6 @@ def rxnorm(query, api):
         if api == 'getApproximateMatch':
             data = get_approximate_match(query)
             res = get_all_properties(data)
-            print(res)
             return res
         if api == 'getDrugs':
             return get_drugs(query)   
