@@ -1,13 +1,4 @@
-# Description: CS361 project - RxNorm API from the National Library of Medicine with current CLI UI
-# Author: Chris Mannina
-# Disclaimer: "This product uses publicly available data from the U.S. National Library of Medicine (NLM), National
-# Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not
-# endorse or recommend this or any other product."
-
-from unicodedata import category
 import requests
-import json
-
 
 def rxnorm(query, api):
     """Main function to search for a medication in RxNorm."""
@@ -19,9 +10,7 @@ def rxnorm(query, api):
             print(res)
             return res
         if api == 'getDrugs':
-            print('api get drugs')
-            return get_drugs(query)
-     
+            return get_drugs(query)   
     except:
         raise Exception('No match found (rxnorm)')
     
@@ -120,21 +109,4 @@ def get_all_properties(data):
                     properties[key][group['propName']] = group['propValue']  
     return properties
 
-
-if __name__ == '__main__':
-    # CLI if app run alone
-    print('Welcome to the drug finder. Here you can enter a enter a drug name and dose (e.g. Atenolol 50 mg), and the '
-          'program will search the National Library of Medicine for the closest match.\n')
-    loop = 'y'
-    while loop.lower() == 'y':
-        query = input('Please enter a drug name: \n')
-        print(f'Querying the National Library of Medicine for a match on {query}.\n')
-        try:
-            data = rxnorm(query)
-            print('*** RxNorm Match ***')
-            print('Here is result from approximate term query: ', data)
-        except:
-            print('No match found - Main')
-        # user input to search again
-        loop = input('Would you like to search another drug? [y/n]: \n')
 
