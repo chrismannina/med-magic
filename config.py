@@ -23,8 +23,3 @@ class Config:
     TEMPLATES_FOLDER = "templates"
     COMPRESSOR_DEBUG = True
     
-    # # database config 
-    # # connection string - [DB_TYPE]+[DB_CONNECTOR]://[USERNAME]:[PASSWORD]@[HOST]:[PORT]/[DB_NAME]
-    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    # SQLALCHEMY_ECHO = False
-    # SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -1,5 +1,6 @@
 import requests
 
+
 def rxnorm(query, api):
     """Main function to search for a medication in RxNorm."""
     try:
@@ -97,7 +98,6 @@ def get_all_properties(data):
             r = requests.get('https://rxnav.nlm.nih.gov/REST/rxcui/' + str(key) + '/allProperties.json?prop=all')
             # check for error
             if r.status_code != 200:
-                # todo: add a class exception
                 raise Exception('Response code 200')        
             concept = r.json()
             category = None
@@ -107,5 +107,3 @@ def get_all_properties(data):
                     category = group['propName']
                     properties[key][group['propName']] = group['propValue']  
     return properties
-
-

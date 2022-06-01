@@ -1,15 +1,7 @@
 from flask import Flask, redirect, render_template, url_for, request
-# from flask-sqlalchemy import SQLAlchemy
 from datetime import datetime
-import os
 from flask import current_app as app
 from .api import *
-
-# app = Flask(__name__, template_folder="templates")
-
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# db = SQLAlchemy(app)
 
 
 @app.route('/', methods=['GET'])
@@ -38,7 +30,6 @@ def drugs(query):
     try:    
         res = rxnorm(query, 'getDrugs')
     except:
-        # add alert here and send back to search page
         return redirect('search')
     return render_template('drugs.html', meds=res)
 
@@ -49,7 +40,6 @@ def approx_match(query):
         r = requests.get('https://uuid-genie.herokuapp.com/api/uuid')
         uuid = r.json()
     except:
-        # add alert here and send back to search page
         return redirect('search')
     return render_template('approx-match.html', meds=res, uuid=uuid)
 
@@ -57,7 +47,6 @@ def approx_match(query):
 def img_srv(query):
     img = {}
     img['keyword'] = query
-    # r = requests.post('http://localhost:3123/image', data=img)
     r = requests.post('https://image-srv.herokuapp.com/image', data=img)
     res = r.json()
     return render_template('image.html', url=res['image'])
@@ -73,6 +62,3 @@ def csv_wizard():
 @app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html')
-
-# if __name__=='__main__':
-#     app.run(debug=True)
