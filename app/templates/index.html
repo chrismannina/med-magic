@@ -1,8 +1,35 @@
 {% extends 'base.html' %}
-{% block title %}About{% endblock %}
+{% block title %}Home{% endblock %}
 {% block content %}
 
-<div class="accordion" id="accordionExample">
+<main class="px-3">
+    <h1>Cover your page.</h1>
+    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+    </p>
+  </main>
+
+  
+<div class="row p-2">
+    <h4></h4>
+    <h4>What is RxNorm?</h4>
+    <p>RxNorm is two things: a normalized naming system for generic and branded drugs; and a tool for supporting semantic interoperation between drug terminologies and pharmacy knowledge base systems. The National Library of Medicine (NLM) produces RxNorm.</p>
+
+    <h4>Purpose of RxNorm</h4>
+    <p>Hospitals, pharmacies, and other organizations use computer systems to record and process drug information. Because these systems use many different sets of drug names, it can be difficult for one system to communicate with another. To address this challenge, RxNorm provides normalized names and unique identifiers for medicines and drugs. The goal of RxNorm is to allow computer systems to communicate drug-related information efficiently and unambiguously.</p>
+
+    <div class="col p-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Image</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+          </div>
+        </div>
+      </div>
+</div>
+<div class="accordion" id="accordionAbout">
     <!-- Heading 1 -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
@@ -10,7 +37,7 @@
             About RxNorm
         </button>
       </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAbout">
         <div class="accordion-body">
             <h5>What is RxNorm?</h5>
             <p>RxNorm is two things: a normalized naming system for generic and branded drugs; and a tool for supporting semantic interoperation between drug terminologies and pharmacy knowledge base systems. The National Library of Medicine (NLM) produces RxNorm.</p>
@@ -27,7 +54,7 @@
             Links
         </button>
       </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAbout">
         <div class="accordion-body">
             <div class="row">
             <div class="col">
@@ -53,7 +80,7 @@
           Disclaimer
         </button>
       </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionAbout">
         <div class="accordion-body">
             <p>This product uses publicly available data from the U.S. National Library of Medicine (NLM), National
                 Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not

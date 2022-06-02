@@ -1,0 +1,101 @@
+{% extends 'base.html' %} 
+{% block title %}Help{% endblock %} 
+{% block content %}
+
+<div class="row p-2">
+    <h4></h4>
+    <h4>What is RxNorm?</h4>
+    <p>RxNorm is two things: a normalized naming system for generic and branded drugs; and a tool for supporting semantic interoperation between drug terminologies and pharmacy knowledge base systems. The National Library of Medicine (NLM) produces RxNorm.</p>
+
+    <h4>Purpose of RxNorm</h4>
+    <p>Hospitals, pharmacies, and other organizations use computer systems to record and process drug information. Because these systems use many different sets of drug names, it can be difficult for one system to communicate with another. To address this challenge, RxNorm provides normalized names and unique identifiers for medicines and drugs. The goal of RxNorm is to allow computer systems to communicate drug-related information efficiently and unambiguously.</p>
+
+    <div class="col p-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Image</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+          </div>
+        </div>
+      </div>
+</div>
+<div class="row p-2">
+    <h4>Need help deciding which search function to use?</h4>
+</div>
+<div class="row p-2">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+             Find All Drugs
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Get a list of all drug products with the specified name. The name can be a drug ingredient, brand name, clinical dose form, branded dose form, clinical drug component, or branded drug component. For example, try one of these names: azithromycin, Lipitor, azithromycin 250 mg, morphine sulfate
+                <a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDrugs.html" class="btn btn-primary" target="_blank" style="background-color: #334257">API Documentation</a></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                Approximate Match
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Look for the drug name in the RxNorm data set that most closely matches the search. This function will display the name of the drug, the RxCui
+                <a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html" class="btn btn-primary" target="_blank" style="background-color: #334257">API Documentation</a></div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                Image
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">What do medications and images have in common? Well, nothing. This is a fun addition to try out in between querying the NLM medication database. Simply, select Image from the 
+                dropdown menu, then search for the whatever you like! This function utilizes the microservice created by Alexander Shen, a simple  is a modern JSON API that surfaces all of the info you’ll need to build any experience for your users. It’s so simple to use that we even run unsplash.com on it!
+   
+            <a href="https://unsplash.com/" class="btn btn-primary" target="_blank" style="background-color: #334257">Unsplash Website</a></div>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div class=""card-deck">
+
+    <div class="col p-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Find All Drugs</h5>
+          <p class="card-text">Get a list of all drug products with the specified name. The name can be a drug ingredient, brand name, clinical dose form, branded dose form, clinical drug component, or branded drug component. For example, try one of these names: azithromycin, Lipitor, azithromycin 250 mg, morphine sulfate</p>
+          <a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDrugs.html" class="btn btn-primary" target="_blank" style="background-color: #334257">API Documentation</a>
+        </div>
+      </div>
+    </div>
+    <div class="col p-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Approximate Match</h5>
+          <p class="card-text">Look for the drug name in the RxNorm data set that most closely matches the search. This function will display the name of the drug, the RxCui</p>
+          <a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html" class="btn btn-primary" target="_blank" style="background-color: #334257">API Documentation</a>
+        </div>
+      </div>
+    </div>
+    <div class="col p-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Image</h5>
+            <p class="card-text">What do medications and images have in common? Well, nothing. This is a fun addition to try out in between querying the NLM medication database. Simply, select Image from the 
+                dropdown menu, then search for the whatever you like! This function utilizes the microservice created by Alexander Shen, a simple  is a modern JSON API that surfaces all of the info you’ll need to build any experience for your users. It’s so simple to use that we even run unsplash.com on it!
+            </p>
+            <a href="https://unsplash.com/" class="btn btn-primary" target="_blank" style="background-color: #334257">Unsplash Website</a>
+          </div>
+        </div>
+      </div>
+          </div>
+  </div> 
+
+{% endblock %}
