@@ -1,27 +1,13 @@
 {% extends 'base.html' %} 
 {% block title %}Help{% endblock %} 
 {% block content %}
-
 <div class="row p-2">
-    <h4></h4>
-    <h4>What is RxNorm?</h4>
-    <p>RxNorm is two things: a normalized naming system for generic and branded drugs; and a tool for supporting semantic interoperation between drug terminologies and pharmacy knowledge base systems. The National Library of Medicine (NLM) produces RxNorm.</p>
+    <h2>Need help?</h2>
 
-    <h4>Purpose of RxNorm</h4>
-    <p>Hospitals, pharmacies, and other organizations use computer systems to record and process drug information. Because these systems use many different sets of drug names, it can be difficult for one system to communicate with another. To address this challenge, RxNorm provides normalized names and unique identifiers for medicines and drugs. The goal of RxNorm is to allow computer systems to communicate drug-related information efficiently and unambiguously.</p>
-
-    <div class="col p-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Image</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-          </div>
-        </div>
-      </div>
 </div>
+
 <div class="row p-2">
-    <h4>Need help deciding which search function to use?</h4>
+    <h4>What are the search functions?</h4>
 </div>
 <div class="row p-2">
     <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -43,7 +29,7 @@
             </button>
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Look for the drug name in the RxNorm data set that most closely matches the search. This function will display the name of the drug, the RxCui
+            <div class="accordion-body">Look for the drug name in the RxNorm data set that most closely matches the search. 
                 <a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html" class="btn btn-primary" target="_blank" style="background-color: #334257">API Documentation</a></div>
           </div>
         </div>
