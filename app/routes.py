@@ -51,14 +51,18 @@ def img_srv(query):
     res = r.json()
     return render_template('image.html', url=res['image'])
 
-@app.route('/query-db', methods=['GET'])
-def query_db():
-    return render_template('query-db.html')
-
-@app.route('/csv-wizard', methods=['GET'])
-def csv_wizard():
-    return render_template('csv-wizard.html')
+@app.route('/help', methods=['GET'])
+def help():
+    return render_template('help.html')
 
 @app.route('/about', methods=['GET'])
 def about():
     return render_template('about.html')
+
+# @app.route('/query-db', methods=['GET'])
+# def query_db():
+#     return render_template('query-db.html')
+
+# @app.route('/csv-wizard', methods=['GET'])
+# def csv_wizard():
+#     return render_template('csv-wizard.html')
