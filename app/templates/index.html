@@ -1,93 +1,30 @@
-{% extends 'base.html' %}
-{% block title %}Home{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
 
-<main class="px-3">
-    <h1>Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-    </p>
-  </main>
-
-  
-<div class="row p-2">
-    <h4></h4>
-    <h4>What is RxNorm?</h4>
-    <p>RxNorm is two things: a normalized naming system for generic and branded drugs; and a tool for supporting semantic interoperation between drug terminologies and pharmacy knowledge base systems. The National Library of Medicine (NLM) produces RxNorm.</p>
-
-    <h4>Purpose of RxNorm</h4>
-    <p>Hospitals, pharmacies, and other organizations use computer systems to record and process drug information. Because these systems use many different sets of drug names, it can be difficult for one system to communicate with another. To address this challenge, RxNorm provides normalized names and unique identifiers for medicines and drugs. The goal of RxNorm is to allow computer systems to communicate drug-related information efficiently and unambiguously.</p>
-
-    <div class="col p-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Image</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
-          </div>
-        </div>
-      </div>
-</div>
-<div class="accordion" id="accordionAbout">
-    <!-- Heading 1 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            About RxNorm
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAbout">
-        <div class="accordion-body">
-            <h5>What is RxNorm?</h5>
-            <p>RxNorm is two things: a normalized naming system for generic and branded drugs; and a tool for supporting semantic interoperation between drug terminologies and pharmacy knowledge base systems. The National Library of Medicine (NLM) produces RxNorm.</p>
-        
-            <h5>Purpose of RxNorm</h5>
-            <p>Hospitals, pharmacies, and other organizations use computer systems to record and process drug information. Because these systems use many different sets of drug names, it can be difficult for one system to communicate with another. To address this challenge, RxNorm provides normalized names and unique identifiers for medicines and drugs. The goal of RxNorm is to allow computer systems to communicate drug-related information efficiently and unambiguously.</p>
-        </div>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6">
+      <h1>Welcome.</h1>
+      <br />
+      <p class="lead">
+        <b>MedMagic</b> is a simple application that allows users to search for
+        any clinical drug through the National Library of Medicine's RxNorm API.
+      </p>
+      <p class="lead">
+        To start, simply navigate to the search page by either clicking the
+        image to the right or using the navigation bar. Be sure to also check
+        out the help page if needed and the about page for more information.
+      </p>
     </div>
-    <!-- Heading 2 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Links
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAbout">
-        <div class="accordion-body">
-            <div class="row">
-            <div class="col">
-                <h5>Information</h5>
-                <li><a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/RxNormAPIs.html" class="link-secondary" target="_blank">RxNorm API Documentation</a></li>
-                <li><a href="https://www.nlm.nih.gov/databases/umls.html" class="link-secondary" target="_blank">Unified Medical Language System License</a></li>
-                <li><a href="https://www.nlm.nih.gov/" class="link-secondary" target="_blank">National Library of Medicine</a></li>
-            </div>
-            <div class="col">
-            <h5>Development</h5>
-            <li><a href="https://github.com/chrismannina/med-magic" class="link-secondary" target="_blank">GitHub</a></li>
-            <li><a href="https://flask.palletsprojects.com/en/2.1.x/" class="link-secondary" target="_blank">Flask Documentation</a></li>
-            <li><a href="https://getbootstrap.com/" class="link-secondary" target="_blank">Bootstrap</a></li>
-            </div>
-            </div>
-        </div>
-      </div>
-    </div>
-    <!-- Heading 3 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Disclaimer
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionAbout">
-        <div class="accordion-body">
-            <p>This product uses publicly available data from the U.S. National Library of Medicine (NLM), National
-                Institutes of Health, Department of Health and Human Services; NLM is not responsible for the product and does not
-               endorse or recommend this or any other product.</p>
-        </div>
-      </div>
+    <div class="col-xl-6 col-lg-6 col-md-6">
+      <a href="/search"
+        ><img
+          src="../static/images/bottle.png"
+          alt="medication bottle"
+          height="70%"
+      /></a>
     </div>
   </div>
+</div>
 
 {% endblock %}

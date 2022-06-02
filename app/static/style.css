@@ -1,4 +1,9 @@
 .accordion-button:not(.collapsed) {
-    color: #354259;
-    background-color: #EEEEEE;
+    color: #434C5E;
+    font-weight: bolder;
+    background-color: #7185AB;
+}
+
+.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #EEEEEE;
 }
