@@ -1,30 +1,52 @@
-{% extends 'base.html' %} 
-{% block title %}Search{% endblock %} 
-{% block content %}
+{% extends 'base.html' %} {% block title %}Search{% endblock %} {% block content
+%}
 
-
-  <form class="d-flex" action="" method="POST">
- <div class="col-auto p-1">
-    <select class="form-select" aria-label="Default select example" name="sel">
-        <option selected>Select API Function</option>
-        <option value="getDrugs">getDrugs</option>
-        <option value="getApproximateMatch">getApproximateMatch</option>
-        <option value="image">Image</option>
-      </select>
+<div class="row p-5">
+  <div class="container">
+    <form class="d-flex" action="" method="POST">
+      <div class="col-auto p-2">
+        <select
+          class="form-select"
+          aria-label="Default select example"
+          name="sel"
+        >
+          <option selected>Select Function</option>
+          <option value="getDrugs">Find All Drugs</option>
+          <option value="getApproximateMatch">Approximate Match</option>
+          <option value="image">Image</option>
+        </select>
+      </div>
+      <div class="col p-2">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Enter your search here..."
+          aria-label="Search"
+          name="search"
+        />
+      </div>
+      <div class="col-auto p-2">
+        <button
+          class="btn btn-outline-success text-white"
+          type="submit"
+          style="background-color: #7185ab"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row p-5">
+  <div class="col p-5">
+    <div
+      class="alert alert-secondary"
+      role="alert"
+      style="background-color: #eeeeee"
+    >
+      Not sure what function to use? We have a <a href="/help" class="alert-link">help</a> page. Give it a click if you
+      like.
     </div>
-    <div class="col p-1">
-    <input
-      class="form-control me-2"
-      type="search"
-      placeholder="Search for a medication..."
-      aria-label="Search"
-      name="search"
-    />
-    </div>
-    <div class="col-auto p-1">
-    <button class="btn btn-outline-success text-white" type="submit" style="background-color: #6351ce">Search</button>
-    </div>
-  </form>
-
-
+  </div>
+</div>
 {% endblock %}
