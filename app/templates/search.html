@@ -1,6 +1,22 @@
 {% extends 'base.html' %} {% block title %}Search{% endblock %} {% block content
 %}
 
+<!-- adding a flashed message to let user know they need to select a function -->
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<div class="row p-5">
+  <div class="col p-5">
+    <div
+      class="alert alert-secondary"
+      role="alert"
+      style="background-color: #eeeeee"
+    >
+      {{ message }}
+    </div>
+  </div>
+</div>
+{% endfor %} {% endif %} {% endwith %}
+
 <div class="row p-5">
   <div class="container">
     <form class="d-flex" action="" method="POST">
@@ -23,6 +39,7 @@
           placeholder="Enter your search here..."
           aria-label="Search"
           name="search"
+          required
         />
       </div>
       <div class="col-auto p-2">
@@ -37,16 +54,5 @@
     </form>
   </div>
 </div>
-<div class="row p-5">
-  <div class="col p-5">
-    <div
-      class="alert alert-secondary"
-      role="alert"
-      style="background-color: #eeeeee"
-    >
-      Not sure what function to use? We have a <a href="/help" class="alert-link">help</a> page. Give it a click if you
-      like.
-    </div>
-  </div>
-</div>
+
 {% endblock %}
