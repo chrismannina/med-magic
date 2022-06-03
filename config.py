@@ -12,11 +12,13 @@ class Config:
     try:
         FLASK_APP = environ.get('FLASK_APP')
         FLASK_ENV = environ.get('FLASK_ENV')    
-        r = requests.get('https://uuid-genie.herokuapp.com/api/uuid')
-        uuid = r.json()
-        SECRET_KEY = uuid['uuid']
     except:
         pass
+
+    # using microservice to set unique secret key
+    r = requests.get('https://uuid-genie.herokuapp.com/api/uuid')
+    uuid = r.json()
+    SECRET_KEY = uuid['uuid']
     
     # static Assets
     STATIC_FOLDER = "static"
