@@ -1,90 +1,286 @@
-{% extends 'base.html' %} 
-{% block title %}Help{% endblock %} 
-{% block content %}
-<div class="row p-2">
-    <h2>Need help?</h2>
-
+{% extends 'base.html' %} {% block title %}Help{% endblock %} {% block content
+%}
+<div class="row p-3">
+  <h2>Need help?</h2>
 </div>
-
-<div class="row p-2">
-    <h4>What are the search functions?</h4>
+<div class="row p-3">
+  <h5>Click on a search function to get more information...</h5>
 </div>
-    <div class=""card-deck">
-
-    <div class="col p-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Find All Drugs</h5>
-          <p class="card-text">Get a list of all drug products with the specified name. The name can be a drug ingredient, brand name, clinical dose form, branded dose form, clinical drug component, or branded drug component. <em>For example, try one of these names: azithromycin, Lipitor, azithromycin 250 mg, morphine sulfate</em>.</p>
-          <a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDrugs.html" class="btn btn-primary" target="_blank" style="background-color: #334257">API Documentation</a>
+<div class="row p-3">
+  <div class="accordion" id="accordion1">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading1">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse1"
+          aria-expanded="false"
+          aria-controls="collapse1"
+        >
+          Find All Drugs
+        </button>
+      </h2>
+      <div
+        id="collapse1"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading1"
+        data-bs-parent="#accordion1"
+      >
+        <div class="accordion-body">
+          <p>
+            Get a list of all drug products with the specified name. The name
+            can be a drug ingredient, brand name, clinical dose form, branded
+            dose form, clinical drug component, or branded drug component.
+          </p>
+          <p>
+            <em
+              >For example, try one of these names: azithromycin, Lipitor,
+              azithromycin 250 mg, morphine sulfate</em
+            >.
+          </p>
+          <a
+            href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getDrugs.html"
+            class="btn btn-primary"
+            target="_blank"
+            style="background-color: #334257"
+            >API Documentation</a
+          >
         </div>
       </div>
     </div>
-    <div class="col p-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Approximate Match</h5>
-          <p class="card-text">Look for the drug name in the RxNorm data set that most closely matches the search. This function will display the name of the RxNorm drug, RxCUI, and score. If you are not sure the spelling of a drug, this is the function to use. <em>For example, ranitidine (Zantac) is the correct spelling. Instead try: rantidine</em>. You'll see even using incorrect spelling returns the proper drug name and RxCUI.</p>
-          <a href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html" class="btn btn-primary" target="_blank" style="background-color: #334257">API Documentation</a>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading2">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse2"
+          aria-expanded="false"
+          aria-controls="collapse2"
+        >
+          Approximate Match
+        </button>
+      </h2>
+      <div
+        id="collapse2"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading2"
+        data-bs-parent="#accordion1"
+      >
+        <div class="accordion-body">
+          <p>
+            Looks for the drug name in the RxNorm data set that most closely
+            matches the search. This function will display the name of the
+            RxNorm drug, RxCUI, and score. If you are unsure the spelling of a
+            drug, this is the function to use.
+          </p>
+          <p>
+            <em
+              >For example, ranitidine (Zantac) is the correct spelling. Instead
+              try: rantidine</em
+            >. You'll see even using incorrect spelling returns the proper drug
+            name and RxCUI.
+          </p>
+          <p>
+            This function will return a <strong>Score</strong>, which indicates
+            the match score. Higher is better, amount a given set of results.
+          </p>
+          <p>
+            <a
+              href="https://lhncbc.nlm.nih.gov/RxNav/APIs/api-RxNorm.getApproximateMatch.html"
+              class="btn btn-primary"
+              target="_blank"
+              style="background-color: #334257"
+              >API Documentation</a
+            >
+          </p>
         </div>
       </div>
     </div>
-    <div class="col p-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Image</h5>
-            <p class="card-text">What do medications and images have in common? Well, nothing. This is a fun addition to try out in between querying the NLM medication database. Simply, select Image from the 
-                dropdown menu, then search for the whatever you like! This function utilizes the microservice created by <a
-                href="https://github.com/shenalexw/image-microservice"
-                class="link-secondary"
-                target="_blank"
-                > Alexander Shen</a
-              >.
-            </p>
-            <a href="https://unsplash.com/" class="btn btn-primary" target="_blank" style="background-color: #334257">Unsplash Website</a>
-          </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading3">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse3"
+          aria-expanded="false"
+          aria-controls="collapse3"
+        >
+          Image
+        </button>
+      </h2>
+      <div
+        id="collapse3"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading3"
+        data-bs-parent="#accordion1"
+      >
+        <div class="accordion-body">
+          <p>
+            What do medications and images have in common? Well, nothing. This
+            is a fun addition to try out in between querying the NLM medication
+            database. Simply, select Image from the dropdown menu, then search
+            for the whatever you like! This function uses a the microservice
+            created by
+            <a
+              href="https://github.com/shenalexw/image-microservice"
+              class="link-secondary"
+              target="_blank"
+              >Alexander Shen</a
+            >. The image microservice utilizes the Unsplash Image API.
+          </p>
+
+          <p>
+            <a
+              href="https://unsplash.com/"
+              class="btn btn-primary"
+              target="_blank"
+              style="background-color: #334257"
+              >Unsplash Website</a
+            >
+          </p>
         </div>
       </div>
-          </div>
-          <div class="row p-2">
-            <h4>What do all these terms mean?</h4>
+    </div>
+  </div>
+</div>
+
+<div class="row p-3 mt-3">
+  <h5>Okay, great... now what do some of these terms mean?</h5>
+</div>
+
+<div class="row p-3">
+  <div class="accordion" id="accordion2">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading5">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse5"
+          aria-expanded="false"
+          aria-controls="collapse5"
+        >
+          RxCUI
+        </button>
+      </h2>
+      <div
+        id="collapse5"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading5"
+        data-bs-parent="#accordion2"
+      >
+        <div class="accordion-body">
+          <p>
+            NLM describes it as
+            <em
+              >"Identifier that points to the common meaning shared by the
+              various source names grouped and assigned to a particular
+              concept"</em
+            >. In simpler terms, this is giving each medication an unique ID.
+          </p>
         </div>
-        <div class="row">
-            <div class="col">
-              <li>
-                <b>API:</b> Application Programming Interface. Simply, a way for us to connect to another computer and get information.
-              </li>
-              <li>
-                <b>RxCUI:</b> NLM describes it as <em>"Identifier that points to the common meaning shared by the various source names grouped and assigned to a particular concept"</em>. 
-                In simpler terms, this is giving each medication an unique ID.
-              </li>
-              <li>
-                <b>UUID:</b> Universally unique identifier. Used for identifying information that needs to be unique within a system. This was generated by a microservice found 
-                <a
-                href="https://github.com/chrismannina/uuid-genie"
-                class="link-secondary"
-                target="_blank"
-                >here</a
-              >.
-              </li>
-            </div>
-            <div class="col">
-              <li>
-                <b>RxAUI:</b> RxNorm atom unique identifier. This is a string identifier for each RxNorm concept.
-              </li>
-              <li>
-                <b>Score:</b> Found when using the <em>Approximate Match</em> search function. This is simply the match score (higher is better).
-              </li>
-              <li>
-                <b>NDC:</b> NLM describes it as <em>"Identifier that points to the common meaning shared by the various source names grouped and assigned to a particular concept"</em>. 
-                In simpler terms, this is giving each medication an unique ID.
-              </li>
-            </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading6">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse6"
+          aria-expanded="false"
+          aria-controls="collapse6"
+        >
+          RxAUI
+        </button>
+      </h2>
+      <div
+        id="collapse6"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading6"
+        data-bs-parent="#accordion2"
+      >
+        <div class="accordion-body">
+          <p>
+            RxNorm atom unique identifier. This is a string identifier for each
+            RxNorm concept.
+          </p>
         </div>
-        
+      </div>
+    </div>
 
-  </div> 
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading7">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse7"
+          aria-expanded="false"
+          aria-controls="collapse7"
+        >
+          NDC
+        </button>
+      </h2>
+      <div
+        id="collapse7"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading7"
+        data-bs-parent="#accordion2"
+      >
+        <div class="accordion-body">
+          The national drug code (NDC) is a unique product identifier used in
+          the United States for drugs intended for human use. The Drug Listing
+          Act of 1972 requires registered drug establishments to provide the
+          Food and Drug Administration (FDA) with a current list of all drugs
+          manufactured, prepared, propagated, compounded, or processed by it for
+          commercial distribution. Drug products are identified and reported
+          using the NDC.
+        </div>
+      </div>
+    </div>
 
-
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading9">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse9"
+          aria-expanded="false"
+          aria-controls="collapse9"
+        >
+          UUID
+        </button>
+      </h2>
+      <div
+        id="collapse9"
+        class="accordion-collapse collapse"
+        aria-labelledby="heading9"
+        data-bs-parent="#accordion2"
+      >
+        <div class="accordion-body">
+          <p>
+            Universally unique identifier. Used for identifying information that
+            needs to be unique within a system. This was generated by a
+            microservice found
+            <a
+              href="https://github.com/chrismannina/uuid-genie"
+              class="link-secondary"
+              target="_blank"
+              >here</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
