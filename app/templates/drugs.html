@@ -1,23 +1,35 @@
 {% extends 'base.html' %} {% block title %}Search{% endblock %} {% block content
 %}
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">RxCUI</th>
-      <th scope="col">Name</th>
-      <th scope="col">Synonym</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for med in meds %}
-    <tr>
-      <td scope="row">{{ med['rxcui'] }}</td>
-      <td scope="row">{{ med['name'] }}</td>
-      <td scope="row">{{ med['synonym'] }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">RxCUI</th>
+        <th scope="col">Name</th>
+        <th scope="col">Synonym</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for med in meds %}
+      <tr>
+        <td scope="row">{{ med['rxcui'] }}</td>
+        <td scope="row">{{ med['name'] }}</td>
+        <td scope="row">{{ med['synonym'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="text-center p-5">
+  <a
+    class="btn btn-primary"
+    style="background-color: #7185ab"
+    href="/search"
+    role="button"
+    >Back</a
+  >
+</div>
 
 {% endblock %}
